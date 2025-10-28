@@ -9,11 +9,15 @@ import { OpenInV0Button } from "@/components/open-in-v0-button";
 import { MultiTagInput } from "@/registry/new-york/ui/multi-tag-input";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { SearchInput } from "@/registry/new-york/ui/search-input";
+import { ColorPickerInput } from "@/registry/new-york/ui/color-picker-input";
 
 
 // Component registry mapping
 const componentMap: Record<string, React.ComponentType<any>> = {
   "multi-tag-input": MultiTagInput,
+  "search-input": SearchInput,
+  "color-picker-input": ColorPickerInput,
   // Add more components as you create them
 };
 
@@ -83,6 +87,12 @@ export default function ComponentPage({
               <div className="w-full max-w-2xl">
                 {params.slug === "multi-tag-input" && (
                   <MultiTagInputDemo />
+                )}
+                {params.slug === "search-input" && (
+                  <SearchInputDemo />
+                )}
+                {params.slug === "color-picker-input" && (
+                  <ColorPickerInputDemo />
                 )}
               </div>
             ) : (
@@ -200,6 +210,53 @@ function MultiTagInputDemo() {
           required
         />
       </div>
+    </div>
+  );
+}
+
+function SearchInputDemo() {
+  const [searchValue, setSearchValue] = React.useState("");
+  const [loading, setLoading] = React.useState(false);
+  const [recentSearches, setRecentSearches] = React.useState(["React", "TypeScript", "Next.js"]);
+
+  const handleSearch = (value: string) => {
+    setLoading(true);
+    // Simulate API call
+    setTimeout(() => {
+      setLoading(false);
+      if (value && !recentSearches.includes(value)) {
+        setRecentSearches([value, ...recentSearches.slice(0, 4)]);
+      }
+    }, 500);
+  };
+
+  return (
+    <div className="space-y-6">
+      <SearchInput
+        value={searchValue}
+        onChange={setSearchValue}
+        onSearch={handleSearch}
+        isLoading={loading}
+        showRecentSearches
+        recentSearches={recentSearches}
+        onRecentSearchClick={handleSearch}
+        placeholder="Try searching..."
+      />
+    </div>
+  );
+}
+
+function ColorPickerInputDemo() {
+  const [color, setColor] = React.useState("#3B82F6");
+
+  return (
+    <div className="space-y-6">
+      <ColorPickerInput
+        value={color}
+        onChange={setColor}
+        label="Brand Color"
+        description="Choose your primary brand color"
+      />
     </div>
   );
 }
