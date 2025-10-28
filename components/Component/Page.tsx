@@ -116,7 +116,7 @@ export default function ComponentPage({
               <div>
                 <h3 className="font-semibold mb-2">Using CLI</h3>
                 <pre className="bg-muted p-4 rounded-lg overflow-x-auto">
-                  <code>npx shadcn@latest add {item.name}</code>
+                  <code>npx shadcn@latest add @chisom-ui/{item.name}</code>
                 </pre>
               </div>
               
