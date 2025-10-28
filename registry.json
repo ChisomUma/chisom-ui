@@ -1,8 +1,22 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "acme",
-  "homepage": "https://acme.com",
+  "name": "chisom-ui",
+  "homepage": "https://chisom-ui.netlify.app",
   "items": [
+    {
+      "name": "multi-tag-input",
+      "type": "registry:ui",
+      "title": "Multi Tag Input",
+      "description": "A reusable multi-tag input component with drag-and-drop reordering and edit-in-place functionality",
+      "dependencies": ["class-variance-authority", "iconsax-react"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/ui/multi-tag-input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
     {
       "name": "hello-world",
       "type": "registry:component",
