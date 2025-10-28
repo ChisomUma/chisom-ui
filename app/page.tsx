@@ -85,7 +85,7 @@ export default function Home() {
                 <CardTitle className="text-xl">Setup shadcn/ui (if not already done)</CardTitle>
               </div>
               <CardDescription>
-                If you haven't set up shadcn/ui in your project yet, run:
+                If you haven&apos;t set up shadcn/ui in your project yet, run:
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -221,7 +221,7 @@ export default function Home() {
             <CardHeader>
               <CardTitle className="text-xl flex items-center gap-2">
                 <CheckCircle2 className="h-6 w-6 text-green-600" />
-                That's it!
+                That&apos;s it!
               </CardTitle>
               <CardDescription className="text-green-900/70">
                 Components will be installed to your <code className="bg-green-100 px-1.5 py-0.5 rounded text-xs">components/ui/</code> directory and utilities to <code className="bg-green-100 px-1.5 py-0.5 rounded text-xs">utils/</code>. Start using them in your project immediately.

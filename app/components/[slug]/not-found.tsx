@@ -16,7 +16,7 @@ export default function NotFound() {
           </div>
           <CardTitle className="text-2xl">Component Not Found</CardTitle>
           <CardDescription>
-            The component you're looking for doesn't exist in the registry.
+            The component you&apos;re looking for doesn&apos;t exist in the registry.
           </CardDescription>
         </CardHeader>
         <CardContent className="flex flex-col gap-4 items-center">

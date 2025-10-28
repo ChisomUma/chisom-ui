@@ -4,7 +4,7 @@ import Link from "next/link";
 import { getAllRegistryItems } from "@/lib/registry";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, CheckCircle2, Copy } from "lucide-react";
+import { ArrowRight, } from "lucide-react";
 
 export default function Home() {
   const registryItems = getAllRegistryItems();

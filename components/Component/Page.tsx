@@ -4,7 +4,7 @@
 
 import * as React from "react";
 import { notFound } from "next/navigation";
-import { getRegistryItem, getRegistryItemSlugs } from "@/lib/registry";
+import { getRegistryItem } from "@/lib/registry";
 import { OpenInV0Button } from "@/components/open-in-v0-button";
 import { MultiTagInput } from "@/registry/new-york/ui/multi-tag-input";
 import { Badge } from "@/components/ui/badge";
@@ -13,8 +13,14 @@ import { SearchInput } from "@/registry/new-york/ui/search-input";
 import { ColorPickerInput } from "@/registry/new-york/ui/color-picker-input";
 
 
+// Define base props interface for all components
+interface BaseComponentProps {
+  className?: string;
+  [key: string]: unknown;
+}
+
 // Component registry mapping
-const componentMap: Record<string, React.ComponentType<any>> = {
+const componentMap: Record<string, React.ComponentType<BaseComponentProps>> = {
   "multi-tag-input": MultiTagInput,
   "search-input": SearchInput,
   "color-picker-input": ColorPickerInput,
